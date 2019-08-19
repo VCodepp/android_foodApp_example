@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="feature" class="feature-content"></div>
+</body>
+<script language="javascript">
+  var feature = document.getElementById("feature");
+
+  function plot(data) {
+    if (data) {
+      feature.innerHTML = data;
+      feature.classList.add('fade-in');
+      var get_img = document.querySelectorAll("img");
+      get_img.forEach(element => {
+        element.removeAttribute('style');
+      });
+    } else {
+      feature.innerHTML = "Not found data";
+    }
+  }
+
+  function destroy(){
+    feature.classList.remove('fade-in');
+  }
+</script>
+
+</html>

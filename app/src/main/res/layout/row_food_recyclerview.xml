@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/row_food_wrapper_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_increase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/row_food_item_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="2dp"
+                android:src="@mipmap/ananasli_tatli"
+                android:transitionName="imageMain"
+                app:civ_border_color="#CCCCCC"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/row_food_item_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="DENEME"
+                android:textColor="#FF853C13"
+                android:transitionName="nameMain"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/row_food_item_price"
+                app:layout_constraintStart_toEndOf="@+id/row_food_item_image"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--PRICE-->
+            <TextView
+                android:id="@+id/row_food_item_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="999₺"
+                android:textColor="#FF853C13"
+                android:transitionName="priceMain"
+                app:layout_constraintBottom_toBottomOf="@+id/row_food_item_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/row_food_item_name" />
+            <!--QUANTITY-->
+        </android.support.constraint.ConstraintLayout>
+
+
+        <Button
+            android:id="@+id/btn_increase"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_increment"
+            app:layout_constraintBottom_toBottomOf="@+id/row_food_quantity"
+            app:layout_constraintEnd_toStartOf="@+id/row_food_quantity"
+            app:layout_constraintTop_toTopOf="@+id/row_food_quantity" />
+
+        <TextView
+            android:id="@+id/row_food_quantity"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_decrease"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_decrease"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_decrement"
+            app:layout_constraintBottom_toBottomOf="@+id/row_food_quantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/row_food_quantity" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
